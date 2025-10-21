@@ -1,67 +1,50 @@
-# Python Calculator
+🧮 Python Calculator (CustomTkinter)
 
-It is a basic python calculator which can perform basic arithmetic operations like addition, subtraction, multiplication. Python 3.8 is used for the implementation.
+Это улучшенный калькулятор на Python с графическим интерфейсом, поддержкой темного/светлого режима, историей вычислений и сменой языка интерфейса (английский / русский).
+Реализован с использованием  Python 3.8+  и библиотеки  CustomTkinter .
 
-## Approach
+ 
+   🚀 Возможности
 
-* User enter number (single digit or n character) to perform a specific operation like 1, 2, 3, 4 and n (n is to cancel calculation operation) are valid.
-* Taking two numbers as inputs and used branching if elif else to perform a particular section.
-* Using functions add(), subtract(), multiply() to perform specific task after given data to the system.
+✅ Выполнение базовых арифметических операций:
+ ➕ Сложение, ➖ Вычитание, ✖ Умножение, ➗ Деление 
 
-## Code
-```
-# Program make a basic calculator
-# Author @inforkgodara
+✅ Графический интерфейс с адаптивным дизайном
+✅ История вычислений
+✅ Мгновенные вычисления в отдельном потоке
+✅ Переключение языка интерфейса  (404 / английский) 
+✅ Переключение темы  (тёмная / светлая) 
+✅ Автоматическое сохранение настроек в файл `settings.json`
 
-# Function adds two numbers
-def add(first_number, second_number):
-    return first_number + second_number
+   📸 Интерфейс
 
+  Главный экран калькулятора с полем ввода и кнопками операций.
+  Кнопка  “Show History / Показать историю”  открывает окно с прошлыми вычислениями.
+  Кнопка  ⚙ Настройки  (открывается при запуске) позволяет:
 
-# Function subtracts two numbers
-def subtract(first_number, second_number):
-    return first_number - second_number
-
-
-# Function multiplies two numbers
-def multiply(first_number, second_number):
-    return first_number * second_number
+    Сменить тему (тёмная / светлая)
+    Сменить язык (404 / английский)
 
 
-# Function divides two numbers
-def divide(first_number, second_number):
-    return first_number / second_number
+
+   🧩 Структура проекта
 
 
-print('Select options.')
-print('1. Add')
-print('2. Subtract')
-print('3. Multiply')
-print('4. Divide')
+📂 PythonCalculator
+├── calculator.py          Основной код приложения
+├── settings.json          Настройки темы и языка
+├── README.md              Документация проекта
 
-while True:
-    # Take input from the console
-    choice = input('Enter choice(1/2/3/4 or n to cancel): ')
-    # Check if choice is one of the five options
-    if choice in ('1', '2', '3', '4'):
-        first_number = float(input('Enter first number: '))
-        second_number = float(input('Enter second number: '))
 
-        if choice == '1':
-            print(first_number, '+', second_number, '=', add(first_number, second_number))
+   🧠 Техническая реализация
 
-        elif choice == '2':
-            print(first_number, '-', second_number, '=', subtract(first_number, second_number))
+  Используется  CustomTkinter  для современного интерфейса.
+  Все вычисления выполняются в отдельном потоке (`threading`) — интерфейс не зависает.
+  Очередь `queue.Queue()` обеспечивает безопасную передачу данных между потоками.
+  Переводы и тексты интерфейса хранятся в словаре `LANGUAGES`.
+  История сохраняется в памяти и отображается в отдельном окне.
+ 
+   👨‍💻 Автор
 
-        elif choice == '3':
-            print(first_number, '*', second_number, '=', multiply(first_number, second_number))
-
-        elif choice == '4':
-            print(first_number, '/', second_number, '=', divide(first_number, second_number))
-    elif choice == 'n':
-        print('Your are successfully logged out!')
-        break
-    else:
-        print('Please enter correct input among these 1/2/3/4/n')
-
-```
+Создан MerfiDEV	 и энтузиазма ❤️
+Оригинальная идея калькулятора — @inforkgodara
